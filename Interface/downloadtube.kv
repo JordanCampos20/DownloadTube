@@ -1,0 +1,49 @@
+WindowManager:
+    MainScreen:
+
+<MainScreen>:
+    name: 'main'
+    Screen:
+        canvas.before:
+            Color:
+                rgba: (1, 0, 0, 0.2)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: 'vertical'
+            FloatLayout:
+
+                size: root.width, root.height
+                MDLabel:
+                    id: aviso_label
+                    text: "[color=000000]AVISOS:[/color]"
+                    markup: True
+                    font_size: '24dp'
+                    halign: 'left'
+                    size_hint_y: None
+                    pos_hint: {'x': 0, 'top': 0.9}
+                    text_size: self.width, None
+                MDTextFieldRound:
+                    id: download_input
+                    icon_left: "download"
+                    hint_text: "DOWNLOAD LINK"
+                    font_size: '18dp'
+                    halign: 'center'
+                    size_hint_y: None
+                    pos_hint: {'center.x': 0, 'top': 1}
+                    text_size: self.width, None
+
+                Button:
+                    id: download_btn
+                    text: "[color=000000]Download[/color]"
+                    background_color: (1, 0, 0, 0.2)
+                    markup: True
+                    font_size: '24dp'
+                    halign: 'center'
+                    size_hint_x: 1
+                    size_hint_y: 0.1
+                    pos_hint: {'center.x': 0, 'top': 0.1}
+                    text_size: self.width, None
+                    on_press:
+                        app.downloadbutton()
